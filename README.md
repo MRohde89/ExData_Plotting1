@@ -4,6 +4,8 @@ since i am using the German version of R Studio, the Datetime column on the png-
 * Fr = German for Freitag     -> Fri = Friday
 * Sa = German for Samstag     -> Sat = Saturday
 
+Thank you for your attention! :-)
+
 ## Introduction
 
 This assignment uses data from
