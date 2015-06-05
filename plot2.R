@@ -7,8 +7,10 @@ setwd("./Coursera/explanatory_data_analysis/")
 ### read the data from your directory
 data <- read.table("household_power_consumption.txt", sep= ";", header = TRUE, na.strings = "?")
 
+### change format from the Date column and add column Timestamp
 data$Date <- strptime(data$Date, format = '%d/%m/%Y')
 data$Date <- as.Date(data$Date)
+data$Timestamp <- paste(data$Date, data$Time)
 
 
 
@@ -18,7 +20,11 @@ data$Timestamp <- ymd_hms(data$Timestamp)
 
 ### since i use the German version of R, the Dates are Do for Thursday, 
 ### Fr for Friday and Sa for Saturday
+par(mfrow = c(1,1))
 png("plot2.png", width = 480, height = 480, units = "px")
-plot(data$Timestamp, data$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)"
+plot(data$Timestamp, 
+     data$Global_active_power, 
+     type = "l", 
+     ylab = "Global Active Power (kilowatts)"
      , xlab = "")
 dev.off() 

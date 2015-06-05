@@ -7,9 +7,10 @@ setwd("./Coursera/explanatory_data_analysis/")
 ### read the data from your directory
 data <- read.table("household_power_consumption.txt", sep= ";", header = TRUE, na.strings = "?")
 
-### change format from the Date column
+### change format from the Date column and add column Timestamp
 data$Date <- strptime(data$Date, format = '%d/%m/%Y')
 data$Date <- as.Date(data$Date)
+data$Timestamp <- paste(data$Date, data$Time)
 
 ### filter the data
 data <- data[data$Date == '2007-02-01' | data$Date == '2007-02-02',]
@@ -21,6 +22,7 @@ data$Timestamp <- ymd_hms(data$Timestamp)
 ### if you run this script on your local english version it will be fine
 ### Thanks for your attention :-)
 
+par(mfrow = c(1,1))
 png("plot3.png", width = 480, height = 480, units = "px")
 plot(data$Timestamp, data$Sub_metering_1, type = "l", ylab = "Energy sub metering"
      , xlab = "")
