@@ -1,3 +1,9 @@
+# IMPORTANT INFORMATION
+since i am using the German version of R Studio, the Datetime column on the png-files differ to the solution from the course
+* Do = German for Donnerstag  -> Thu = Thursday
+* Fr = German for Freitag     -> Fri = Friday
+* Sa = German for Samstag     -> Sat = Saturday
+
 ## Introduction
 
 This assignment uses data from
